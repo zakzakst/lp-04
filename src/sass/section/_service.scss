@@ -1,0 +1,20 @@
+.service-img__path {
+  fill: none;
+  stroke-width: 4px;
+  stroke: #000;
+  stroke-opacity: 0;
+}
+.service-img__heading {
+  text-anchor: start;
+  font-size: 32px;
+  font-weight: bold;
+  fill: #000;
+  fill-opacity: 0;
+}
+.service-img__icon {
+  fill: #000;
+  fill-opacity: 0;
+}
+.service-text {
+  @include animText;
+}
