@@ -9,10 +9,6 @@ class HeroClass {
   init() {
     this.heroBgSet();
     this.heroBgLineAnim();
-    setTimeout(() => {
-      this.heroTitleShow();
-      this.heroBgShowImg();
-    }, this.lineAnimSpeed + 500);
   }
   heroTitleShow() {
     // タイトル文字の表示
@@ -39,7 +35,12 @@ class HeroClass {
       const path = this.bgPaths[i];
       path.animate({
         strokeDashoffset: 0
-      }, this.lineAnimSpeed, mina.easeout);
+      }, this.lineAnimSpeed, mina.easeout, () => {
+        setTimeout(() => {
+          this.heroTitleShow();
+          this.heroBgShowImg();
+        }, 500);
+      });
     }
   }
   heroBgShowImg() {

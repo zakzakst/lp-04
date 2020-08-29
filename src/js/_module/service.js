@@ -11,6 +11,8 @@ class ServiceClass {
     this.icon = this.svg.select('.service-img__icon');
     this.heading = this.svg.select('.service-img__heading');
     this.text = document.querySelector(`#${id} .service-text`);
+    this.pathAnimSpeed = 600;
+    this.headingAnimSpeed = 400;
   }
   init() {
     this.animHandler();
@@ -24,7 +26,7 @@ class ServiceClass {
     });
     this.path.animate({
       strokeDashoffset: pathLength * 2,
-    }, 600, mina.easeout, () => {
+    }, this.pathAnimSpeed, mina.easeout, () => {
       this.animHeading();
       this.animIcon();
       this.animText();
@@ -37,12 +39,12 @@ class ServiceClass {
     this.heading.animate({
       fillOpacity: 1,
       startOffset: 0,
-    }, 600, mina.backout);
+    }, this.headingAnimSpeed, mina.backout);
   }
   animIcon() {
     this.icon.animate({
       fillOpacity: 1,
-    }, 600, mina.easeout);
+    }, this.headingAnimSpeed, mina.easeout);
   }
   animText() {
     this.text.classList.add('is-animated');

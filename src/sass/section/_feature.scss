@@ -1,0 +1,42 @@
+$feature-transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+
+.feature__item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+.feature__img-wrapper {
+  overflow: hidden;
+}
+.feature__img {
+  overflow: hidden;
+  transform: translateY(100%);
+  transition: transform $feature-transition;
+  & > img {
+    transform-origin: top center;
+    transform: translateY(30%) scale(1.15);
+    transition: transform $feature-transition .1s;
+  }
+}
+.feature__heading,
+.feature__test {
+  overflow: hidden;
+  & > span {
+    display: inline-block;
+    transform: translateY(100%);
+    transition: transform $feature-transition;
+  }
+}
+
+.feature__item.is-animated {
+  .feature__img {
+    transform: translateY(0);
+    & > img {
+      transform: translateY(0) scale(1);
+    }
+  }
+  .feature__heading,
+  .feature__test {
+    & > span {
+      transform: translateY(0);
+    }
+  }
+}
