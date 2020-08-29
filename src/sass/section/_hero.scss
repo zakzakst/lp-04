@@ -1,14 +1,6 @@
 .hero__title,
 .hero__subtitle {
-  overflow: hidden;
-  & > span {
-    display: inline-block;
-    transform: translateY(100%);
-    transition: transform .5s .5s;
-  }
-  &.is-animated > span {
-    transform: translateY(0);
-  }
+  @include animText;
 }
 .hero-bg__img {
   width: 700px;

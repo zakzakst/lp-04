@@ -53,7 +53,7 @@ class HeroClass {
   }
 }
 
-export function HeroScript() {
+export function heroScript() {
   const hero = new HeroClass();
   hero.init();
 }

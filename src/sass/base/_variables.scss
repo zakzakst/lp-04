@@ -22,3 +22,16 @@ $z-go-top: 100 !default;
 $z-header-menu: 1000 !default;
 $z-header-btn: 1001 !default;
 $z-page-overlay: 10000 !default;
+
+// ミックスイン
+@mixin animText {
+  overflow: hidden;
+  & > span {
+    display: inline-block;
+    transform: translateY(100%);
+    transition: transform .5s .5s;
+  }
+  &.is-animated > span {
+    transform: translateY(0);
+  }
+}
