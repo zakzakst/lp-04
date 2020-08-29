@@ -1,0 +1,17 @@
+// 変数
+@import "./base/variables";
+
+// ライブラリ
+$link: $color-primary;
+@import "../../node_modules/bulma/bulma";
+
+// 共通
+@import "./common/common";
+@import "./common/utility";
+// @import "./common/header";
+@import "./common/footer";
+@import "./common/go-top";
+
+// 各種パーツ
+
+// 各セクション
