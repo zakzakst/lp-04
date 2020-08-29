@@ -1,0 +1,18 @@
+.hero__title,
+.hero__subtitle {
+  overflow: hidden;
+  & > span {
+    display: inline-block;
+    transform: translateY(100%);
+    transition: transform .5s .5s;
+  }
+  &.is-animated > span {
+    transform: translateY(0);
+  }
+}
+.hero-bg__img {
+  width: 700px;
+  height: 600px;
+  background: url(https://picsum.photos/id/237/700/600) no-repeat center center;
+  background-size: cover;
+}
