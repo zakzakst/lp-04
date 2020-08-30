@@ -17,7 +17,7 @@ class FeatureClass {
     [...this.items].forEach(item => {
       ScrollTrigger.create({
         trigger: item,
-        start: "top 30%",
+        start: "top 70%",
         onEnter: self => {
           this.animItem(item);
           self.kill();
