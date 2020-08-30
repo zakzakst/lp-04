@@ -1,3 +1,4 @@
+import { parallaxScript } from './_module/parallax';
 import { headerScript } from './_module/header';
 import { goTopScript } from './_module/go-top';
 import { pageLoaderScript } from './_module/page-loader';
@@ -9,9 +10,16 @@ import { dataScript } from './_module/data';
 (() => {
   headerScript();
   goTopScript();
-  pageLoaderScript();
   // heroScript();
   serviceScript();
   featureScript();
   dataScript();
+  window.onload = () => {
+    pageLoaderScript();
+    parallaxScript();
+  }
+  // リサイズ時のscrollTriggerの処理が上手くできなかったので、再読み込みさせる
+  window.onresize = () => {
+    location.reload();
+  }
 })();

@@ -11,12 +11,18 @@
 {%- endblock %}
 
 {% block main_content %}
-<main>
-{% include '_module/section/hero-section.njk' %}
-{% include '_module/section/service-section.njk' %}
-{% include '_module/section/data-section.njk' %}
-{% include '_module/section/feature-section.njk' %}
-</main>
+<div id="js-parallax-wrapper">
+  <div id="js-parallax">
+    <main class="main">
+    {% include '_module/section/hero-section.njk' %}
+    {% include '_module/section/service-section.njk' %}
+    {% include '_module/section/data-section.njk' %}
+    {% include '_module/section/feature-section.njk' %}
+    </main>
+    <!-- フッター -->
+    {% include '_module/common/footer.njk' %}
+  </div>
+</div>
 {% endblock %}
 
 {% block foot_files -%}

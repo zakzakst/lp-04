@@ -6,9 +6,7 @@ class PageLoaderClass {
     this.el = document.getElementById('js-page-loader');
   }
   init() {
-    window.onload = () => {
-      this.openAnim();
-    }
+    this.openAnim();
   }
   openAnim() {
     const tl = gsap.timeline();
