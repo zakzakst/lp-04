@@ -1,6 +1,21 @@
+.hero__title-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 400px;
+}
 .hero__title,
 .hero__subtitle {
   @include animText;
+}
+
+.hero-bg__wrapper {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  width: 700px;
+  height: 600px;
+  // filter: grayscale(1);
 }
 .hero-bg__img {
   width: 700px;

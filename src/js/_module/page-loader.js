@@ -1,4 +1,5 @@
 import { gsap } from "gsap";
+import { heroScript } from './hero';
 
 class PageLoaderClass {
   constructor() {
@@ -10,12 +11,17 @@ class PageLoaderClass {
     }
   }
   openAnim() {
-    gsap.to(this.el, {
+    const tl = gsap.timeline();
+    tl.to(this.el, {
       autoAlpha: 0,
       onComplete: () => {
         this.el.parentNode.removeChild(this.el);
       }
-    });
+    }).to(this.el, {
+      onStart: () => {
+        heroScript();
+      }
+    }, '+=.2');
   }
 }
 

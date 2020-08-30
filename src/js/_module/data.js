@@ -14,7 +14,7 @@ class Graph1Class {
       'M250,51l-138.564,119.052l34.641,139.75l103.923,-19.802l69.282,0l0,-80l-69.282,-159Z',
       'M250,51l-207.846,77.483l34.641,222l173.205,59.517l173.205,-60.85l0,-199.334l-173.205,-98.816Z'
     ];
-    this.graphCount = 0;
+    this.graphCount = 1;
   }
   init() {
     this.animHandler();
@@ -35,7 +35,7 @@ class Graph1Class {
   animHandler() {
     ScrollTrigger.create({
       trigger: this.trigger,
-      start: "top 50%",
+      start: "top 70%",
       onEnter: self => {
         this.animGraph();
         self.kill();
@@ -89,7 +89,7 @@ class Graph2Class {
   animHandler() {
     ScrollTrigger.create({
       trigger: this.trigger,
-      start: "top 50%",
+      start: "top 70%",
       onEnter: self => {
         this.animGraph1();
         self.kill();
