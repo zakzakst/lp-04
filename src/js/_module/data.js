@@ -22,7 +22,7 @@ class Graph1Class {
   animGraph() {
     this.graph.animate({
       d: this.graphVal[this.graphCount],
-      fillOpacity: .4 + .1 * this.graphCount,
+      fillOpacity: .4 + .15 * this.graphCount,
     }, 600, mina.easeout, () => {
       this.graphCount++;
       if(this.graphCount < this.graphVal.length) {

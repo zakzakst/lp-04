@@ -1,7 +1,7 @@
 // 色の設定
-$color-primary: #333;
+$color-primary: #000;
 $color-primary--bg: #ecfff8;
-$color-primary--darker: #333;
+$color-primary--darker: #000;
 $color-base: #fff;
 $color-text: #4a4a4a;
 
@@ -19,8 +19,8 @@ $transition-slow: 1s;
 
 // z-indexの数値
 $z-go-top: 100 !default;
+$z-header: 1001 !default;
 $z-header-menu: 1000 !default;
-$z-header-btn: 1001 !default;
 $z-page-overlay: 10000 !default;
 
 // ミックスイン
