@@ -44,7 +44,63 @@ class Graph1Class {
   }
 }
 
+class Graph2Class {
+  constructor() {
+    this.trigger = document.getElementById('js-data-graph2-wrapper');
+    this.svg = Snap('#js-data-graph2');
+    this.graph1 = this.svg.select('#js-data-graph2-graph1');
+    this.graph2 = this.svg.select('#js-data-graph2-graph2');
+    this.graph3 = this.svg.select('#js-data-graph2-graph3');
+    this.icon = document.getElementById('js-data-graph2-icon');
+    this.animSpeed = 400;
+    this.graphVal = {
+      graph1: 'M90,490l0,-80',
+      graph2: 'M250,490l0,-160',
+      graph3: 'M410,490l0,-320',
+    };
+  }
+  init() {
+    this.animHandler();
+  }
+  animGraph1() {
+    this.graph1.animate({
+      d: this.graphVal.graph1,
+    }, this.animSpeed, mina.easeout, () => {
+      this.animGraph2();
+    });
+  }
+  animGraph2() {
+    this.graph2.animate({
+      d: this.graphVal.graph2,
+    }, this.animSpeed, mina.easeout, () => {
+      this.animGraph3();
+    });
+  }
+  animGraph3() {
+    this.graph3.animate({
+      d: this.graphVal.graph3,
+    }, this.animSpeed, mina.easeout, () => {
+      this.animIcon();
+    });
+  }
+  animIcon() {
+    this.icon.classList.add('is-animated');
+  }
+  animHandler() {
+    ScrollTrigger.create({
+      trigger: this.trigger,
+      start: "top 50%",
+      onEnter: self => {
+        this.animGraph1();
+        self.kill();
+      }
+    });
+  }
+}
+
 export function dataScript() {
   const graph1 = new Graph1Class();
   graph1.init();
+  const graph2 = new Graph2Class();
+  graph2.init();
 }

@@ -1,6 +1,6 @@
 $feature-transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
 
-.feature__item:nth-child(odd) {
+.feature__item:nth-child(even) {
   flex-direction: row-reverse;
 }
 .feature__img-wrapper {
