@@ -4,11 +4,15 @@ class HeroClass {
     this.subtitle = document.getElementById('js-hero-subtitle');
     this.bgSvg = Snap('#js-hero-bg');
     this.bgPaths = this.bgSvg.selectAll('.js-hero-bg-mask-item');
-    this.lineAnimSpeed = 2000;
+    this.lineAnimSpeed = 1000;
   }
   init() {
     this.heroBgSet();
     this.heroBgLineAnim();
+    setTimeout(() => {
+      this.heroTitleShow();
+      this.heroBgShowImg();
+    },　this.lineAnimSpeed + 500);
   }
   heroTitleShow() {
     // タイトル文字の表示
@@ -23,7 +27,7 @@ class HeroClass {
       path.attr({
         fill: 'none',
         stroke: '#fff',
-        strokeWidth: 1,
+        strokeWidth: 2,
         strokeDasharray: `${pathLength} ${pathLength}`,
         strokeDashoffset: pathLength
       });
@@ -35,12 +39,7 @@ class HeroClass {
       const path = this.bgPaths[i];
       path.animate({
         strokeDashoffset: 0
-      }, this.lineAnimSpeed, mina.easeout, () => {
-        setTimeout(() => {
-          this.heroTitleShow();
-          this.heroBgShowImg();
-        }, 500);
-      });
+      }, this.lineAnimSpeed, mina.easein);
     }
   }
   heroBgShowImg() {
