@@ -7,3 +7,24 @@
   fill: #000;
   fill-opacity: .4;
 }
+
+.data-graph2__base {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+}
+.data-graph2__graph {
+  fill: none;
+  stroke: #000;
+  stroke-width: 140px;
+}
+.data-graph2__icon {
+  fill: #000;
+  fill-opacity: 0;
+  transform: translateY(20px);
+  transition: all .3s .3s;
+  &.is-animated {
+    fill-opacity: 1;
+    transform: translateY(0);
+  }
+}
